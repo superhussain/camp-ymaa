@@ -1,0 +1,92 @@
+h1, h2, h3, h4, h5, h6
+  font-family: "Bebas Neue"
+  font-weight: 900
+  color: $orange
+
+p, li
+  font-size: 1.2em
+  line-height: 1.5
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold
+
+hr
+  border: 1.5px solid $black
+  margin: 0.5em 0 1em
+  border-width: 1px 0 0
+  clear: both
+  height: 0
+ul
+  margin: 0
+  padding: 0
+
+// Links
+
+a
+  color: $blue
+  text-decoration: none
+  outline: 0
+  transition: color 150ms ease-in-out
+
+a:hover, a:focus
+  color: lighten($blue, 20%)
+
+
+
+// Selection colors (easy to forget)
+
+::selection
+  background: lighten($orange,20%)
+
+::-moz-selection
+  background: lighten($orange,20%)
+
+img::selection
+  background: transparent
+
+img::-moz-selection
+  background: transparent
+
+body
+  -webkit-tap-highlight-color: white
+
+// Basic Styles
+
+html,
+body
+  min-height: 100vh
+  overflow-x: hidden
+
+body
+  background-color: $white
+  font-family: 'Source Sans Pro', sans-serif
+
+section
+  min-height: 100vh
+  background-size: cover
+  background-position: center
+  .wrapper
+    width: 100%
+    max-width: 900px
+    margin: 0 auto
+    padding: 3em
+    box-sizing: border-box
+
+// clearfix hack
+
+.clearfix:after
+  visibility: hidden
+  display: block
+  font-size: 0
+  content: " "
+  clear: both
+  height: 0
+.clearfix
+  display: inline-block
+* html .clearfix
+  height: 1%
+.clearfix
+  display: block
