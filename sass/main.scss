@@ -11,5 +11,12 @@
   "1-base/body";
 
 //2-sections
+@import
+  "2-sections/home",
+  "2-sections/about",
+  "2-sections/programs",
+  "2-sections/contact";
 
 //3-modules
+@import
+  "3-modules/nav";

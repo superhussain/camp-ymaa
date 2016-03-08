@@ -3,6 +3,7 @@
     //functions on doc ready
     scroll();
     contactForm();
+    slider();
     $(window).scroll(function() {
       // functions on scroll
     });
@@ -18,7 +19,7 @@ var scroll = function() {
   });
 }
 
-var contactForm = function () {
+var contactForm = function() {
   $("#contact-submit").on('click', function () {
     $contact_form = $('#contact-form');
     var fields = $contact_form.serialize();
@@ -37,4 +38,42 @@ var contactForm = function () {
     });
     return false;
   });
+}
+
+var slider = function() {
+  var $slider = $('.slide-wrapper');
+  var $offset = $slider.offset().left;
+  var $width = $(window).width() + 17;
+
+  $('i.slide-right').on('click', function() {
+    console.log('slide right');
+    if ($offset * -1 + $width >= $slider.width() - 50) {
+      $offset = 0;
+      $slider.animate({marginLeft: $offset}, 500);
+    } else {
+      $offset = $offset - $width;
+      $slider.animate({marginLeft: $offset}, 500);
+    }
+  });
+
+  $('i.slide-left').on('click', function() {
+    console.log('slide left');
+    if ($offset == 0) {
+      $offset = ($width) * -2;
+      $slider.animate({marginLeft: $offset}, 500);
+    } else {
+      $offset = $offset + $width;
+      $slider.animate({marginLeft: $offset}, 500);
+    }
+  });
+
+  setInterval(function() {
+    if ($offset * -1 + $width >= $slider.width() - 50) {
+      $offset = 0;
+      $slider.animate({marginLeft: $offset}, 500);
+    } else {
+      $offset = $offset - $width;
+      $slider.animate({marginLeft: $offset}, 500);
+    }
+  }, 10000);
 }
