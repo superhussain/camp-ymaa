@@ -1,2 +1,11 @@
 section#contact
-  background-color: $orange
+  background-color: $white
+  h1
+    color: $orange
+    &:before, &:after
+      background-color: $orange
+    @media (max-width: 720px)
+      &:before, &:after
+        background: none
+  p
+    color: #666

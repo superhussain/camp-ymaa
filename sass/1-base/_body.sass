@@ -72,6 +72,8 @@ body
 body
   background-color: $white
   font-family: 'Source Sans Pro', sans-serif
+  @media (max-width: 720px)
+    font-size: 85%
 
 section
   // min-height: 100vh
@@ -86,18 +88,18 @@ section
 
 // clearfix hack
 
-.clearfix:after, .wrapper:after
+.clearfix:after
   visibility: hidden
   display: block
   font-size: 0
   content: " "
   clear: both
   height: 0
-.clearfix, .wrapper
+.clearfix
   display: inline-block
-* html .clearfix, * html .wrapper
+* html .clearfix
   height: 1%
-.clearfix, .wrapper
+.clearfix
   display: block
 
 
@@ -130,9 +132,12 @@ section
       top: 40%
       left: 50%
       transform: translate(80%,0)
+    @media (max-width: 720px)
+      &:before, &:after
+        background: none
   p
     color: $white
     text-align: justify
-    font-size: 1.1em
+    font-size: 1.2em
     font-weight: 300
     margin: 1.5em 0

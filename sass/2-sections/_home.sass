@@ -43,6 +43,9 @@ section#home
           margin: 0.2em
           &:before, &:after
             background: none
+          @media (max-width: 720px)
+            font-size: 4em
+            padding: 0
         a.cta-button
           position: absolute
           top: 80%
@@ -83,6 +86,9 @@ section#home
             width: 30%
             top: 40%
             left: 100%
+          @media (max-width: 720px)
+            &:before, &:after
+              background: none
 
     .slide
       background-size: cover
