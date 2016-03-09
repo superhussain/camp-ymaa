@@ -10,6 +10,7 @@ nav
     width: 100%
     max-width: 1100px
     margin: 0 auto
+    padding: 0 2.5em
     display: flex
     justify-content: space-between
     align-items: center
@@ -41,7 +42,6 @@ nav
     box-shadow: 0px 2px 20px rgba($black,0.2)
     .wrapper
       max-width: none
-      padding: 0 2.5em
       a.logo
         height: 50px
       ul.navbar li a
@@ -69,9 +69,11 @@ nav
           color: white
           font-size: 0.9em
           &:hover
-            border-bottom: 2px solid $orange
+            border-bottom: 1px solid #777
+            color: $white
+            background-color: $orange
     &.scrolled
-        ul.navbar
-          top: 50px
-          li a
-            padding: calc(40px - 1.3em) 0.75em
+      ul.navbar
+        top: 50px
+        li a
+          padding: calc(40px - 1.3em) 0.75em !important
