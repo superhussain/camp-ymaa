@@ -8,7 +8,7 @@ header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Content-type: application/json');
 
-$admin_email = 'hello@getswitchvr.com'; // Your Email
+$admin_email = 'info@thebestcampever.ca'; // Your Email
 $message_min_length = 5; // Min Message Length
 
 
@@ -17,7 +17,7 @@ class Contact_Form{
 
     $this->name = stripslashes($details['name']);
     $this->email = trim($details['email']);
-    $this->subject = 'SwitchVR Contact Form'; // Subject
+    $this->subject = 'YMAA Camp Contact Form'; // Subject
     $this->message = stripslashes($details['message']);
 
     $this->email_admin = $email_admin;
