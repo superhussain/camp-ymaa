@@ -2,10 +2,13 @@
   jQuery(document).ready(function ($) {
     //functions on doc ready
     scroll();
+    hamburger();
     contactForm();
     slider();
+    navScroll();
     $(window).scroll(function() {
       // functions on scroll
+      navScroll();
     });
   });
 })(jQuery);
@@ -16,6 +19,13 @@ var scroll = function() {
     $('html,body').animate({
       scrollTop: $(this.hash).offset().top
     }, 500); // Animate the scroll to this link's href value
+  });
+}
+
+var hamburger = function() {
+  $('.hamburger-menu').on('click', function() {
+    $('.bar').toggleClass('animate');
+    $('nav ul.navbar').slideToggle('slow');
   });
 }
 
@@ -76,4 +86,13 @@ var slider = function() {
       $slider.animate({marginLeft: $offset}, 500);
     }
   }, 10000);
+}
+
+var navScroll = function() {
+  var $scrollTop = $(window).scrollTop();
+  if ($scrollTop >= 50) {
+    $('nav').addClass('scrolled');
+  } else {
+    $('nav').removeClass('scrolled');
+  }
 }

@@ -5,30 +5,73 @@ nav
   left: 0
   right: 0
   z-index: 1000
+  transition: all 200ms ease-in-out
   .wrapper
     width: 100%
-    max-width: 900px
+    max-width: 1100px
     margin: 0 auto
     display: flex
     justify-content: space-between
     align-items: center
+    box-sizing: border-box
     a.logo
       background-image: url(../img/logo.png)
       background-size: contain
       background-repeat: no-repeat
-      background-position: center
+      background-position: left center
       height: 80px
       width: 40%
+    .hamburger-menu
+      display: none
     ul.navbar
       list-style: none
       display: flex
       li a
+        color: lighten($black, 40%)
         text-transform: uppercase
         letter-spacing: 2px
-        font-size: 0.9em
-        padding: calc(40px - 0.9em) 1em
+        font-size: 0.7em
+        padding: calc(40px - 1.3em) 0.75em
         border-bottom: 1px solid transparent
         transition: all 150ms ease-in-out
         &:hover
-          border-bottom: 5px solid $orange
+          border-bottom: 6px solid $orange
           color: $orange
+  &.scrolled
+    box-shadow: 0px 2px 20px rgba($black,0.2)
+    .wrapper
+      max-width: none
+      padding: 0 2.5em
+      a.logo
+        height: 50px
+      ul.navbar li a
+        padding: calc(25px - 1.3em) 0.75em
+
+@media (max-width: 900px)
+  nav
+    .wrapper
+      a.logo
+        display: block
+      .hamburger-menu
+        display: block
+      ul.navbar
+        display: none
+        flex-direction: column
+        position: absolute
+        left: 0
+        top: 80px
+        width: 100%
+        li a
+          display: block
+          text-align: center
+          background: #555
+          border-bottom: 1px solid #777
+          color: white
+          font-size: 0.9em
+          &:hover
+            border-bottom: 2px solid $orange
+    &.scrolled
+        ul.navbar
+          top: 50px
+          li a
+            padding: calc(40px - 1.3em) 0.75em
