@@ -1,5 +1,5 @@
 section#home
-  background-color: $blue
+  background-color: $black
   overflow: auto
   width: 100%
   white-space: nowrap
@@ -24,7 +24,7 @@ section#home
     &:hover
       background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.3))
   .slide-wrapper
-    width: 300vw
+    width: 400vw
     .slide
       width: 100vw
       height: 100vh
@@ -32,11 +32,32 @@ section#home
       .wrapper
         box-sizing: border-box
         text-align: center
-        transform: translate(0, calc(50vh - 50%))
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        padding-bottom: 8em
         h1
           color: $orange
           font-size: 5em
           margin: 0.2em
+          &:before, &:after
+            background: none
+        a.cta-button
+          position: absolute
+          top: 80%
+          left: 50%
+          transform: translate(-50%,-50%)
+          background-color: $orange
+          padding: 1em 3em
+          color: $white
+          text-transform: uppercase
+          font-weight: 300
+          letter-spacing: 3px
+          border-bottom: 8px solid darken($orange, 20%)
+          transition: all 150ms ease-in-out
+          &:hover
+            border-bottom: 5px solid darken($orange, 15%)
         p.tag
           color: white
           letter-spacing: 3px
@@ -63,7 +84,14 @@ section#home
             top: 40%
             left: 100%
 
-    .slide1
-      background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)), url(../img/slide1.jpg)
+    .slide
       background-size: cover
       background-position: center
+    .slide1
+      background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)), url(../img/slide1.jpg)
+    .slide2
+      background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)), url(../img/slide2.jpg)
+    .slide3
+      background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)), url(../img/slide3.jpg)
+    .slide4
+      background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.6)), url(../img/slide4.jpg)

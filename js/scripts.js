@@ -53,7 +53,7 @@ var contactForm = function() {
 var slider = function() {
   var $slider = $('.slide-wrapper');
   var $offset = $slider.offset().left;
-  var $width = $(window).width() + 17;
+  var $width = $(window).width() + 20;
 
   $('i.slide-right').on('click', function() {
     console.log('slide right');
