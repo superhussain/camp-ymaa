@@ -22,14 +22,14 @@ var scroll = function() {
       scrollTop: $(this.hash).offset().top
     }, 500); // Animate the scroll to this link's href value
   });
-}
+};
 
 var hamburger = function() {
   $('.hamburger-menu').on('click', function() {
     $('.bar').toggleClass('animate');
     $('nav ul.navbar').slideToggle('slow');
   });
-}
+};
 
 var accordian = function () {
   var accordion_trigger = $('.accordion-heading.accordionize');
@@ -46,7 +46,7 @@ var accordian = function () {
     }
     event.preventDefault();
   });
-}
+};
 
 var contactForm = function() {
   $("#contact-submit").on('click', function () {
@@ -67,12 +67,12 @@ var contactForm = function() {
     });
     return false;
   });
-}
+};
 
 var slider = function() {
   var $slider = $('.slide-wrapper');
   var $offset = $slider.offset().left;
-  var $width = $(window).width() + 20;
+  var $width = $(window).width() + $.scrollbarWidth();
 
   $('i.slide-right').on('click', function() {
     console.log('slide right');
@@ -87,7 +87,7 @@ var slider = function() {
 
   $('i.slide-left').on('click', function() {
     console.log('slide left');
-    if ($offset == 0) {
+    if ($offset === 0) {
       $offset = ($width) * -2;
       $slider.animate({marginLeft: $offset}, 500);
     } else {
@@ -105,7 +105,7 @@ var slider = function() {
       $slider.animate({marginLeft: $offset}, 500);
     }
   }, 10000);
-}
+};
 
 var navScroll = function() {
   var $scrollTop = $(window).scrollTop();
@@ -114,7 +114,7 @@ var navScroll = function() {
   } else {
     $('nav').removeClass('scrolled');
   }
-}
+};
 
 var testimonialScroller = function() {
   var $quote = $('#testimonials .quote');
@@ -129,7 +129,7 @@ var testimonialScroller = function() {
       $author.text(rand.author).fadeIn();
     });
   }, 10000);
-}
+};
 
 var testimonials = [
   {
@@ -165,3 +165,16 @@ var testimonials = [
     "author": "Najarali Family"
   }
 ];
+
+$.scrollbarWidth = function() {
+  var parent, child, width;
+
+  if(width===undefined) {
+    parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body');
+    child=parent.children();
+    width=child.innerWidth()-child.height(99).innerWidth();
+    parent.remove();
+  }
+
+ return width;
+};
