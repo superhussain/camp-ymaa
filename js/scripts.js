@@ -72,7 +72,7 @@ var contactForm = function() {
 var slider = function() {
   var $slider = $('.slide-wrapper');
   var $offset = $slider.offset().left;
-  var $width = $(window).width() + $.scrollbarWidth();
+  var $width = $(window).width() + $.scrollbarWidth() + 3;
 
   $('i.slide-right').on('click', function() {
     console.log('slide right');
