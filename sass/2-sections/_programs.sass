@@ -1,17 +1,19 @@
 section#programs
-  background-color: $orange
+  background-color: $white
   .wrapper
     padding-bottom: 0
     h1
-      color: $white
+      color: $orange
       &:before, &:after
-        background-color: $white
+        background-color: $orange
       @media (max-width: 720px)
         &:before, &:after
           background: none
+  .row2
+    padding-bottom: 5em !important
   .row
     display: flex
-    padding: 0 3em 5em
+    padding: 0 3em 3em
     .col
       background-color: lighten($black, 20%)
       box-sizing: border-box
@@ -34,20 +36,39 @@ section#programs
         margin: 1.5em 2em
         font-weight: 300
         font-size: 1.2em
+        br
+          font-size: 1.5em
       &.col1
         width: 60%
         .head
-          background-image: linear-gradient(rgba($black,0.5), rgba($black,0.5)), url(../img/slide1.jpg)
+          background-image: url(../img/slide1.jpg)
         &:hover
-          background-color: $blue
+          background-color: $orange
       &.col2
         width: 40%
         .head
-          background-image: linear-gradient(rgba($black,0.5), rgba($black,0.5)), url(../img/slide4.jpg)
+          background-image: url(../img/slide4.jpg)
         &:hover
           background-color: $blue
-    @media (max-width: 900px)
+      &.col3
+        width: 40%
+        .head
+          background-image: url(../img/slide4.jpg)
+        &:hover
+          background-color: $blue
+      &.col4
+        width: 60%
+        .head
+          background-image: url(../img/slide1.jpg)
+        &:hover
+          background-color: $orange
+  @media (max-width: 900px)
+    .row
       flex-wrap: wrap
-      .col, .col1, .col2
-        width: 100%
-        margin-bottom: 2em
+      padding: 0 3em
+      .col
+        &.col1, &.col2, &.col3, &.col4
+          width: 100%
+          margin-bottom: 2em
+    .row2
+      flex-wrap: wrap-reverse
