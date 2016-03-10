@@ -41,25 +41,25 @@ section#programs
       &.col1
         width: 60%
         .head
-          background-image: url(../img/slide1.jpg)
+          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/slide1.jpg)
         &:hover
           background-color: $orange
       &.col2
         width: 40%
         .head
-          background-image: url(../img/slide4.jpg)
+          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/slide5.jpg)
         &:hover
           background-color: $blue
       &.col3
         width: 40%
         .head
-          background-image: url(../img/slide4.jpg)
+          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/tejani1.jpg)
         &:hover
           background-color: $blue
       &.col4
         width: 60%
         .head
-          background-image: url(../img/slide1.jpg)
+          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/tejani2.jpg)
         &:hover
           background-color: $orange
   @media (max-width: 900px)
@@ -72,3 +72,21 @@ section#programs
           margin-bottom: 2em
     .row2
       flex-wrap: wrap-reverse
+
+.col3, .col4
+  .head
+    position: relative
+    .tejani-logo
+      padding: 2em
+      display: inline-block
+      background-image: url(../img/tejani-logo.jpg)
+      background-size: contain
+      background-repeat: no-repeat
+      border-radius: 0.4em
+      position: absolute
+      bottom: 1em
+      right: 1em
+      box-shadow: 0px 0px 5px rgba($white, 0.3)
+      transition: all 200ms ease-in-out
+      &:hover
+        box-shadow: 0px 0px 15px rgba($white, 0.6)

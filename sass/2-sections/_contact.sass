@@ -4,11 +4,17 @@ section#contact
     max-width: 960px
     h1
       color: $blue
+      margin-bottom: 0
       &:before, &:after
         background-color: $blue
       @media (max-width: 720px)
         &:before, &:after
           background: none
+    .tagline
+      text-align: center
+      color: lighten($black, 40%)
+      font-size: 1.5em
+      letter-spacing: 5px
   .span-left
     width: 70%
     float: left
