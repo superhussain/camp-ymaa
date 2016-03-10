@@ -20,11 +20,15 @@ footer
     font-weight: 900
     padding-top: 1.5em
     font-size: 1.5em
+    @media (max-width: 500px)
+      font-size: 1.2em
   .links
     a
-      margin: 0 1em
+      margin: 0.5em 1em
       text-transform: uppercase
       letter-spacing: 0.3em
       color: lighten($orange, 20%)
       &:hover
         color: $orange
+      @media (max-width: 460px)
+        display: block
