@@ -45,28 +45,28 @@ class Contact_Form{
     // Check name
     if(!$this->name)
     {
-      $this->response_html .= '<p>Please enter your name</p>';
+      $this->response_html .= '<p>Please enter your name.</p>';
       $this->response_status = 0;
     }
 
     // Check email
     if(!$this->email)
     {
-      $this->response_html .= '<p>Please enter an e-mail address</p>';
+      $this->response_html .= '<p>Please enter an e-mail address.</p>';
       $this->response_status = 0;
     }
 
     // Check valid email
     if($this->email && !$this->validateEmail())
     {
-      $this->response_html .= '<p>Please enter a valid e-mail address</p>';
+      $this->response_html .= '<p>Please enter a valid e-mail address.</p>';
       $this->response_status = 0;
     }
 
     // Check message length
     if(!$this->message || strlen($this->message) < $this->message_min_length)
     {
-      $this->response_html .= '<p>Please enter your message. It should have at least '.$this->message_min_length.' characters</p>';
+      $this->response_html .= '<p>Please enter your message. It should have at least '.$this->message_min_length.' characters.</p>';
       $this->response_status = 0;
     }
   }
