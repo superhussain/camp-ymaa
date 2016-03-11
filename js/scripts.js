@@ -7,10 +7,12 @@
     contactForm();
     slider();
     navScroll();
+    registerButton();
     testimonialScroller();
     $(window).scroll(function() {
       // functions on scroll
       navScroll();
+      registerButton();
     });
   });
 })(jQuery);
@@ -113,6 +115,16 @@ var navScroll = function() {
     $('nav').addClass('scrolled');
   } else {
     $('nav').removeClass('scrolled');
+  }
+};
+
+var registerButton = function() {
+  var scrollTop = $(window).scrollTop(),
+      introTop = $('section#intro').offset().top;
+  if (scrollTop >= introTop) {
+    $('.register-button').fadeIn('fast');
+  } else {
+    $('.register-button').fadeOut('fast');
   }
 };
 
