@@ -10,10 +10,10 @@ section#programs
         &:before, &:after
           background: none
   .row2
-    padding-bottom: 5em !important
+    padding-bottom: 3em !important
   .row
     display: flex
-    padding: 0 3em 3em
+    padding: 0 3em 5em
     .col
       background-color: lighten($black, 20%)
       box-sizing: border-box
@@ -37,17 +37,17 @@ section#programs
         font-weight: 300
         font-size: 1.2em
         br
-          font-size: 1.5em
+          font-size: 1.3em
       &.col1
         width: 60%
         .head
-          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/slide1.jpg)
+          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/primary-campers.jpg)
         &:hover
           background-color: $orange
       &.col2
         width: 40%
         .head
-          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/slide5.jpg)
+          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/maker-spaces.jpg)
         &:hover
           background-color: $blue
       &.col3
@@ -65,13 +65,14 @@ section#programs
   @media (max-width: 900px)
     .row
       flex-wrap: wrap
-      padding: 0 1em
+      padding: 0 1em 3em
       .col
         &.col1, &.col2, &.col3, &.col4
           width: 100%
           margin-bottom: 2em
     .row2
       flex-wrap: wrap-reverse
+      padding-bottom: 0px !important
 
 .col3, .col4
   .head
