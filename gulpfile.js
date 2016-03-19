@@ -84,4 +84,4 @@ gulp.task('watch', function() {
 });
 
 // default task
-gulp.task('default', ['scripts', 'styles', 'serve', 'watch']);
+gulp.task('default', ['scripts', 'styles', 'image', 'serve', 'watch']);
