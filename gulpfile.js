@@ -26,10 +26,6 @@ gulp.task('scripts', function() {
 
 // styles task
 gulp.task('styles', function() {
-//  gulp.src('sass/**/*.scss')
-//  .pipe(sass({
-//    style: 'compressed'
-//  }))
   return sass('sass/*.scss', { style: 'compressed' })
   .on('error', errorLog)
   .pipe(prefix('last 5 versions'))
