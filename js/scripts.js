@@ -1,6 +1,5 @@
 (function ($) {
   jQuery(document).ready(function ($) {
-    //functions on doc ready
     scroll();
     hamburger();
     accordian();
@@ -9,10 +8,13 @@
     navScroll();
     registerButton();
     testimonialScroller();
+    programSwitcher();
     $(window).scroll(function() {
-      // functions on scroll
       navScroll();
       registerButton();
+    });
+    $(window).resize(function(e) {
+      resizeFix();
     });
   });
 })(jQuery);
@@ -74,15 +76,41 @@ var contactForm = function() {
 var slider = function() {
   var $slider = $('.slide-wrapper');
   var $offset = $slider.offset().left;
-  var $width = $(window).width() + $.scrollbarWidth();
+  var windowWidth = $(window).width() + $.scrollbarWidth();
 
-  $('i.slide-right').on('click', function() {
-    console.log('slide right');
-    if ($offset * -1 + $width >= $slider.width() - 50) {
+  var sliderInterval = setInterval(function() {
+    if ($offset * -1 + windowWidth >= $slider.width() - 50) {
       $offset = 0;
       $slider.animate({marginLeft: $offset}, 500);
     } else {
-      $offset = $offset - $width;
+      $offset = $offset - windowWidth;
+      $slider.animate({marginLeft: $offset}, 500);
+    }
+  }, 10000);
+
+  $(window).resize(function(event) {
+    clearInterval(sliderInterval);
+    $offset = 0;
+    $slider.animate({marginLeft: $offset}, 500);
+    windowWidth = $(window).width() + $.scrollbarWidth();
+    sliderInterval = setInterval(function() {
+      if ($offset * -1 + windowWidth >= $slider.width() - 50) {
+        $offset = 0;
+        $slider.animate({marginLeft: $offset}, 500);
+      } else {
+        $offset = $offset - windowWidth;
+        $slider.animate({marginLeft: $offset}, 500);
+      }
+    }, 10000);
+  });
+
+  $('i.slide-right').on('click', function() {
+    console.log('slide right');
+    if ($offset * -1 + windowWidth >= $slider.width() - 50) {
+      $offset = 0;
+      $slider.animate({marginLeft: $offset}, 500);
+    } else {
+      $offset = $offset - windowWidth;
       $slider.animate({marginLeft: $offset}, 500);
     }
   });
@@ -90,23 +118,13 @@ var slider = function() {
   $('i.slide-left').on('click', function() {
     console.log('slide left');
     if ($offset === 0) {
-      $offset = ($width) * -2;
+      $offset = (windowWidth) * -2;
       $slider.animate({marginLeft: $offset}, 500);
     } else {
-      $offset = $offset + $width;
+      $offset = $offset + windowWidth;
       $slider.animate({marginLeft: $offset}, 500);
     }
   });
-
-  setInterval(function() {
-    if ($offset * -1 + $width >= $slider.width() - 50) {
-      $offset = 0;
-      $slider.animate({marginLeft: $offset}, 500);
-    } else {
-      $offset = $offset - $width;
-      $slider.animate({marginLeft: $offset}, 500);
-    }
-  }, 10000);
 };
 
 var navScroll = function() {
@@ -189,4 +207,27 @@ $.scrollbarWidth = function() {
   }
 
  return width;
+};
+
+var programSwitcher = function() {
+  $('.button-bar a').on('click', function(event) {
+    event.preventDefault();
+
+    var $this = $(this);
+    var targetProgram = $this.attr('href');
+
+    $('.button-bar a').removeClass('active');
+    $this.addClass('active');
+
+    $('section#programs article').removeClass('active');
+    $(targetProgram).addClass('active');
+  });
+};
+
+var resizeFix = function() {
+  if ($(window).width() > 900) {
+    $('nav .navbar').css({'display': 'flex'});
+  } else {
+    $('nav .navbar').css({'display': 'none'});
+  }
 };

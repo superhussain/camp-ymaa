@@ -1,7 +1,7 @@
 section#programs
   background-color: $white
+  min-height: 1040px
   .wrapper
-    padding-bottom: 0
     h1
       color: $orange
       &:before, &:after
@@ -9,85 +9,95 @@ section#programs
       @media (max-width: 720px)
         &:before, &:after
           background: none
-  .row2
-    padding-bottom: 3em !important
-  .row
-    display: flex
-    padding: 0 3em 5em
-    .col
-      background-color: lighten($black, 20%)
+    article
+      background-color: #444
       box-sizing: border-box
-      margin: 0 1em
-      border-radius: 1em
-      transition: all 200ms ease-in-out
+      border-radius: 2em
+      transition: all 300ms ease-in-out
+      display: none
       .head
         background-size: cover
         background-position: center
-        border-radius: 1em 1em 0 0
-        padding: 3.5em
+        position: relative
+        height: 200px
+        border-radius: 2em 2em 0 0
         h2
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+          text-align: center
           margin: 0
           padding: 0
-          text-align: center
           font-weight: 300
           font-size: 2.5em
-          letter-spacing: 3px
-      p
-        margin: 1.5em 2em
-        font-weight: 300
-        font-size: 1.2em
-        br
-          font-size: 1.3em
-      &.col1
-        width: 60%
-        .head
-          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/primary-campers.jpg)
-        &:hover
-          background-color: $orange
-      &.col2
-        width: 40%
-        .head
-          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/maker-spaces.jpg)
-        &:hover
-          background-color: $blue
-      &.col3
-        width: 40%
-        .head
-          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/tejani1.jpg)
-        &:hover
-          background-color: $blue
-      &.col4
-        width: 60%
-        .head
-          background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/tejani2.jpg)
-        &:hover
-          background-color: $orange
-  @media (max-width: 900px)
-    .row
-      flex-wrap: wrap
-      padding: 0 1em 3em
-      .col
-        &.col1, &.col2, &.col3, &.col4
-          width: 100%
-          margin-bottom: 2em
-    .row2
-      flex-wrap: wrap-reverse
-      padding-bottom: 0px !important
-
-.col3, .col4
-  .head
-    position: relative
-    .tejani-logo
-      padding: 2em
-      display: inline-block
-      background-image: url(../img/tejani-logo.jpg)
-      background-size: contain
-      background-repeat: no-repeat
-      border-radius: 0.4em
-      position: absolute
-      bottom: 1em
-      right: 1em
-      box-shadow: 0px 0px 5px rgba($white, 0.3)
-      transition: all 200ms ease-in-out
+          letter-spacing: 4px
+          width: calc(100% - 3em)
+      .body
+        padding: 3em
+        p
+          margin: 0
+          padding: 0
+          margin-bottom: 1em
+          text-align: justify
       &:hover
-        box-shadow: 0px 0px 15px rgba($white, 0.6)
+        background-color: $blue
+      &.active
+        display: block
+    .button-bar
+      position: absolute
+      display: flex
+      flex-direction: column
+      margin-left: -3em
+      margin-top: 5em
+      z-index: 10
+      a
+        padding: 1.5em
+        background-color: #777
+        position: relative
+        transition: all 200ms ease-in-out
+        &:hover
+          background-color: #aaa
+        &:first-child
+          border-radius: 5px 0 0 0
+        &:last-child
+          border-radius: 0 0 0 5px
+        &.active
+          background-color: $orange
+        i
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+          color: $white
+
+section#programs .wrapper
+  article#prog1 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/tejani1.jpg)
+  article#prog2 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/tejani2.jpg)
+  article#prog3 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/primary-campers.jpg)
+  article#prog4 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/maker-spaces.jpg)
+  article#prog5 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/sports-camp.jpg)
+  article#prog6 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/arts-camp.jpg)
+  article#prog7 .head
+    background-image: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../img/funancial-freedom.jpg)
+
+.tejani-logo
+  padding: 2em
+  display: inline-block
+  background-image: url(../img/tejani-logo.jpg)
+  background-size: contain
+  background-repeat: no-repeat
+  border-radius: 0.4em
+  position: absolute
+  bottom: 1em
+  right: 1em
+  box-shadow: 0px 0px 5px rgba($white, 0.3)
+  transition: all 200ms ease-in-out
+  &:hover
+    box-shadow: 0px 0px 15px rgba($white, 0.6)

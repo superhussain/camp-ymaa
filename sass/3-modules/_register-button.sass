@@ -1,0 +1,20 @@
+.register-button
+  position: fixed
+  right: 0
+  top: 30vh
+  transform: rotate(-90deg) translate(0,175%)
+  background-color: lighten($black, 30%)
+  color: $white
+  padding: 0.5em 2em
+  font-size: 1.2em
+  text-transform: uppercase
+  font-weight: 100
+  letter-spacing: 5px
+  transition: all 200ms ease-in-out
+  z-index: 9999
+  display: none
+  &:hover
+    background-color: $orange
+    color: $white
+  @media (max-width: 720px)
+    transform: rotate(-90deg) translate(0, 185%)
