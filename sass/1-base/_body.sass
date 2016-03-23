@@ -65,9 +65,8 @@ body
 body
   background-color: $white
   font-family: 'Source Sans Pro', sans-serif
-  @media (max-width: 720px)
+  @media (min-width: 500px) and (max-width: 720px)
     font-size: 85%
-
 section
   background-size: cover
   background-position: center
@@ -77,6 +76,8 @@ section
     margin: 0 auto
     padding: 5em 3em
     box-sizing: border-box
+    @media (max-width: 500px)
+      padding: 3em 1.5em
 
 // clearfix hack
 
@@ -134,3 +135,5 @@ section
     font-size: 1.2em
     font-weight: 300
     margin: 1.5em 0
+    @media (max-width: 500px)
+      text-align: left
