@@ -62,7 +62,7 @@ section#home
           padding: 1em 3em
           color: $white
           text-transform: uppercase
-          font-weight: 300
+          font-weight: 700
           letter-spacing: 3px
           border-bottom: 8px solid darken($orange, 20%)
           transition: all 150ms ease-in-out
@@ -71,7 +71,7 @@ section#home
         p.tag
           color: white
           letter-spacing: 3px
-          font-weight: 100
+          font-weight: 700
           margin: 0
           font-size: 1.5em
           position: relative
@@ -119,3 +119,14 @@ section#home
       background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)), url(../img/slides/slide8.jpg)
     .slide9
       background-image: linear-gradient(rgba($black, 0.4), rgba($black, 0.4)), url(../img/slides/slide9.jpg)
+
+
+.body-alt section#home
+  .slide
+    height: 60vh
+    .wrapper
+      top: 34%
+  .slide-left, .slide-right
+    padding: calc(30vh - 0.5em) 1em
+    @media (max-width: 540px)
+      padding: calc(30vh - 0.5em) 10px
