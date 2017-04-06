@@ -24,6 +24,7 @@ nav
       background-position: left center
       height: 80px
       width: 40%
+      transition: 200ms ease-in-out
     .hamburger-menu
       display: none
     ul.navbar
@@ -37,7 +38,7 @@ nav
         padding: calc(40px - 1.3em) 0.75em
         border-bottom: 1px solid transparent
         transition: all 150ms ease-in-out
-        &:hover
+        &:hover, &.active
           border-bottom: 6px solid $orange
           color: $orange
   &.scrolled
